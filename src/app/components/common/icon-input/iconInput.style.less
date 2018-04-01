@@ -1,0 +1,26 @@
+@import "~Mixins";
+.fx-input-icon {
+  position: relative;
+  > i {
+      position: absolute;
+      display: block;
+      transform: translate(0, -50%);
+      top: 50%;
+      pointer-events: none;
+      width: 25px;
+      text-align: center;
+      font-style: normal;
+      font-size: 20px;
+      padding-left: 10px;
+      color:@greyIconColor;
+  } 
+  > input {
+      padding: 15px 20px 13px 30px;
+      font-size: 20px;
+      border:1px solid @greyBorder;
+      border-radius:5px;
+      color:@inputTextColor;
+      width:100%;
+   }
+}
+

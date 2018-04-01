@@ -1,0 +1,60 @@
+@import "~Mixins";
+
+/**
+* Button and Input styling
+*/
+.fx-btn {
+	border-radius: 3px;
+	box-sizing: border-box;
+	position: relative;
+	outline: none;
+	border: 0;
+	display: inline-block;
+	padding: 0 8px;
+	line-height: 36px;
+	min-height: 36px;
+	background: transparent;
+	white-space: nowrap;
+	min-width: 80px;
+	text-align: center;
+	font-weight: 500;
+	font-size: 14px;
+	font-style: normal;
+	font-family: inherit;
+	color: @grey87;
+	text-decoration: none;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all ease 300ms;
+	width:100%;
+	.rippleEffect();
+	&:hover {
+		background: @disableColor;
+	}
+	&.success{
+		color: @white;
+		background: @successBtnColor;
+	}
+	&.default{
+		color: @white;
+		background: @defaultBtnBgColor;
+		border:1px solid @greyBorder;
+		border-radius: 5px;
+		color:@defaultBtnTextColor;
+	}
+	&.lg {
+		height: 51px;
+		line-height: 51px;
+	}
+	&[disabled] {
+     	box-shadow: none ;
+     	background: @disableColor ;
+     	color: @disableTextColor ;
+     	cursor: not-allowed ;
+ 		opacity: 1 ;
+		
+		&:after {
+			background-image: none ;
+		}
+    }
+}

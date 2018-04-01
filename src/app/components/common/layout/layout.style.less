@@ -1,0 +1,62 @@
+@import "~Mixins";
+
+/**
+ * Layout classes
+ */
+
+/*960/768 px center Container*/
+.fx-container {
+	.clearfixProps();
+	margin: 0 auto;
+	display: block;
+	&.lg {
+		width: @containerLg;
+	}
+	&.md {
+		width: @containerMd;
+	}
+}
+@media(max-width: @containerLg) {
+	.fx-container.lg {
+		width: 100%;
+	}
+}
+@media(max-width: @containerMd) {
+	.fx-container.md {
+		width: 100%;
+	}
+}
+
+.fx-grid {
+	
+	&.table {
+		display: block;
+	
+		> .col, [class*="col-"] {
+			display: inline-block;
+			vertical-align: top;
+			float: none;
+			&.content-top {
+				vertical-align: top;
+			}
+		}
+
+	}
+	&.block {
+		display: block;
+		margin: 0 -12px;
+		[class*="col-"] {
+			float: left;
+			padding: 0 12px;
+		}
+	}
+	.generate-width(12);
+	.generate-width(@n, @i: 1) when (@i =< @n) {
+		.col-@{i} {
+			width: (100% / 12 * @i);
+		}
+		.generate-width(@n, (@i + 1));
+	}
+}
+
+/*12 Column Grid Layout*/

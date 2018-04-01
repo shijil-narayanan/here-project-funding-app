@@ -1,0 +1,78 @@
+@import "~Mixins";
+
+/*
+    Resey user agent styles
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+html, body {
+    .typoProps(14px, 400);
+    font-family: 'Roboto', sans-serif;
+    background-color:@bgColor;
+    color:#333333 ;
+    height: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+input[type='text']{
+    &:focus{
+        outline:none;
+    }
+}
+.fx-white{
+    color:white;
+}
+.fx-grey-border{
+    border:1px solid #ddd;
+}
+.fx-padding-20{
+    padding:20px;
+}
+.fx-padding-t-20{
+    padding-top:20px;
+}
+.fx-padding-tb-15{
+    padding:15px 0;
+}
+.fx-danger-text{
+    color:#F25E33;
+    font-weight:500;
+}
+.fx-padding-l-15{
+    padding-left:15px;
+}
+.fx-clearfix {
+    .clearfixProps();
+}
+.fx-margin-t-10{
+    margin-top:10px;
+}
+.fx-visibility-hidden{
+    visibility: hidden;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+

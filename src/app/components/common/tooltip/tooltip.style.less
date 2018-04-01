@@ -1,0 +1,22 @@
+
+@import "~Mixins";
+.fx-tool-tip-master{
+   position:relative;
+  .fx-tool-tip{
+    background-color: @blackBg;
+    border: solid 1px @paleGrey;
+    border-radius: 5px;
+    color: @white;
+    padding: 14px 15px 14px 15px;
+    text-align: center;
+    font-size: 16px;
+  }
+  .fx-tool-tip-arrow{
+      position: absolute;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid @blackBg;
+      top: 37px;
+      left: 12%;
+  } 
+}
